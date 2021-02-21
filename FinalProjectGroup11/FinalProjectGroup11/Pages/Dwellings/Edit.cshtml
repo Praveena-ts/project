@@ -1,0 +1,85 @@
+﻿@page
+@model FinalProjectGroup11.Pages.Dwellings.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Dwelling</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Dwelling.Id" />
+            <div class="form-group">
+                <label asp-for="Dwelling.DwellingPrice" class="control-label"></label>
+                <input asp-for="Dwelling.DwellingPrice" class="form-control" />
+                <span asp-validation-for="Dwelling.DwellingPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.DwellingAddress" class="control-label"></label>
+                <input asp-for="Dwelling.DwellingAddress" class="form-control" />
+                <span asp-validation-for="Dwelling.DwellingAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.TotalArea" class="control-label"></label>
+                <input asp-for="Dwelling.TotalArea" class="form-control" />
+                <span asp-validation-for="Dwelling.TotalArea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.NumberBed" class="control-label"></label>
+                <input asp-for="Dwelling.NumberBed" class="form-control" />
+                <span asp-validation-for="Dwelling.NumberBed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.NumberBath" class="control-label"></label>
+                <input asp-for="Dwelling.NumberBath" class="form-control" />
+                <span asp-validation-for="Dwelling.NumberBath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.DateAdded" class="control-label"></label>
+                <input asp-for="Dwelling.DateAdded" class="form-control" />
+                <span asp-validation-for="Dwelling.DateAdded" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.NumberFloor" class="control-label"></label>
+                <input asp-for="Dwelling.NumberFloor" class="form-control" />
+                <span asp-validation-for="Dwelling.NumberFloor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.Description" class="control-label"></label>
+                <input asp-for="Dwelling.Description" class="form-control" />
+                <span asp-validation-for="Dwelling.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.AgentId" class="control-label"></label>
+                <select asp-for="Dwelling.AgentId" class="form-control" asp-items="ViewBag.AgentId"></select>
+                <span asp-validation-for="Dwelling.AgentId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.CityId" class="control-label"></label>
+                <select asp-for="Dwelling.CityId" class="form-control" asp-items="ViewBag.CityId"></select>
+                <span asp-validation-for="Dwelling.CityId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dwelling.BuyerId" class="control-label"></label>
+                <select asp-for="Dwelling.BuyerId" class="form-control" asp-items="ViewBag.BuyerId"></select>
+                <span asp-validation-for="Dwelling.BuyerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
