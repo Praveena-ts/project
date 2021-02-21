@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using FinalProjectGroup11.Data;
 using FinalProjectGroup11.Models;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace FinalProjectGroup11.Pages.Dwellings
 {
@@ -21,9 +22,9 @@ namespace FinalProjectGroup11.Pages.Dwellings
 
         public IActionResult OnGet()
         {
-        ViewData["AgentId"] = new SelectList(_context.Set<Agent>(), "Id", "Id");
-        ViewData["BuyerId"] = new SelectList(_context.Set<Buyer>(), "Id", "Id");
-        ViewData["CityId"] = new SelectList(_context.Set<City>(), "Id", "Id");
+        ViewData["AgentId"] = new SelectList(_context.Set<Agent>(), "Id", "FirstName");
+        ViewData["BuyerId"] = new SelectList(_context.Set<Buyer>(), "Id", "FirstName");
+        ViewData["CityId"] = new SelectList(_context.Set<City>(), "Id", "Name");
             return Page();
         }
 
@@ -39,6 +40,18 @@ namespace FinalProjectGroup11.Pages.Dwellings
                 return Page();
             }
 
+            var currentDate = DateTime.Today;
+            var dateAdded = Dwelling.DateAdded.Date;
+
+            if(dateAdded > currentDate)
+            {
+                ModelState.AddModelError("Dwelling.DateAdded", "Date Added can't be a future date");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
             _context.Dwelling.Add(Dwelling);
             await _context.SaveChangesAsync();
 

@@ -39,9 +39,9 @@ namespace FinalProjectGroup11.Pages.Dwellings
             {
                 return NotFound();
             }
-           ViewData["AgentId"] = new SelectList(_context.Set<Agent>(), "Id", "Id");
-           ViewData["BuyerId"] = new SelectList(_context.Set<Buyer>(), "Id", "Id");
-           ViewData["CityId"] = new SelectList(_context.Set<City>(), "Id", "Id");
+           ViewData["AgentId"] = new SelectList(_context.Set<Agent>(), "Id", "FirstName");
+           ViewData["BuyerId"] = new SelectList(_context.Set<Buyer>(), "Id", "FirstName");
+           ViewData["CityId"] = new SelectList(_context.Set<City>(), "Id", "Name");
             return Page();
         }
 
@@ -49,6 +49,19 @@ namespace FinalProjectGroup11.Pages.Dwellings
         // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            var currentDate = DateTime.Today;
+            var dateAdded = Dwelling.DateAdded.Date;
+
+            if (dateAdded > currentDate)
+            {
+                ModelState.AddModelError("Dwelling.DateAdded", "Date Added can't be a future date");
+            }
+
             if (!ModelState.IsValid)
             {
                 return Page();
