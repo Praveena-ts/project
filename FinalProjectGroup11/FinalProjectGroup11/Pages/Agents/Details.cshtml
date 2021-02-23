@@ -2,13 +2,13 @@
 @model FinalProjectGroup11.Pages.Agents.DetailsModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Agent Details";
 }
 
-<h1>Details</h1>
+<h2>Agent Details</h2>
 
 <div>
-    <h4>Agent</h4>
+    
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -57,9 +57,33 @@
             @Html.DisplayNameFor(model => model.Agent.SalesOffice)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Agent.SalesOffice.Id)
+            @Html.DisplayFor(model => model.Agent.SalesOffice.Name)
         </dd>
     </dl>
+</div>
+<div>
+    <h2> Listed dwellings</h2>
+    <table class="table table-info">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Agent.Dwellings[0].DwellingAddress)</th>
+                <th>@Html.DisplayNameFor(model => model.Agent.Dwellings[0].TotalArea)</th>
+                <th>@Html.DisplayNameFor(model => model.Agent.Dwellings[0].NumberBed)</th>
+                <th>@Html.DisplayNameFor(model => model.Agent.Dwellings[0].NumberBath)</th>
+            </tr>
+        </thead>
+
+        @foreach (var item in Model.Agent.Dwellings)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.DwellingAddress)</td>
+                <td>@Html.DisplayFor(modelItem => item.TotalArea)</td>
+                <td>@Html.DisplayFor(modelItem => item.NumberBed)</td>
+                <td>@Html.DisplayFor(modelItem => item.NumberBath)</td>
+            </tr>
+        }
+
+    </table>
 </div>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Agent.Id">Edit</a> |

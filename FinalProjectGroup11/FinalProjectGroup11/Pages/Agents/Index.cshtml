@@ -2,10 +2,10 @@
 @model FinalProjectGroup11.Pages.Agents.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Agents-Home";
 }
 
-<h1>Index</h1>
+<h1>Our Agents List</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -28,12 +28,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Agent[0].Rating)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Agent[0].AgentDescription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Agent[0].LicenseNumber)
-            </th>
+            
             <th>
                 @Html.DisplayNameFor(model => model.Agent[0].SalesOffice)
             </th>
@@ -59,13 +54,7 @@
                 @Html.DisplayFor(modelItem => item.Rating)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AgentDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LicenseNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SalesOffice.Id)
+                @Html.DisplayFor(modelItem => item.SalesOffice.Name)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |

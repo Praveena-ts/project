@@ -29,6 +29,7 @@ namespace FinalProjectGroup11.Pages.Agents
             }
 
             Agent = await _context.Agent
+                .Include(x => x.Dwellings)
                 .Include(a => a.SalesOffice).FirstOrDefaultAsync(m => m.Id == id);
 
             if (Agent == null)

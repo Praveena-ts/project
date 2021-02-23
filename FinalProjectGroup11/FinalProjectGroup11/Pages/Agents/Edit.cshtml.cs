@@ -37,7 +37,7 @@ namespace FinalProjectGroup11.Pages.Agents
             {
                 return NotFound();
             }
-           ViewData["SalesOfficeId"] = new SelectList(_context.Set<SalesOffice>(), "Id", "Id");
+           ViewData["SalesOfficeId"] = new SelectList(_context.Set<SalesOffice>(), "Id", "Name");
             return Page();
         }
 
@@ -45,6 +45,17 @@ namespace FinalProjectGroup11.Pages.Agents
         // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            //Perform validation for Duplicate License#
+            int AgentCount = _context.Agent.Count(x => x.Id != Agent.Id && x.LicenseNumber == Agent.LicenseNumber);
+            if (AgentCount > 0)
+            {
+                ModelState.AddModelError("Agent.LicenseNumber", "Agent with this License Number already exists");
+            }
+            //Recheck Validation Status
             if (!ModelState.IsValid)
             {
                 return Page();

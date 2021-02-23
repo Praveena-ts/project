@@ -21,7 +21,7 @@ namespace FinalProjectGroup11.Pages.Agents
 
         public IActionResult OnGet()
         {
-        ViewData["SalesOfficeId"] = new SelectList(_context.Set<SalesOffice>(), "Id", "Id");
+        ViewData["SalesOfficeId"] = new SelectList(_context.Set<SalesOffice>(), "Id", "Name");
             return Page();
         }
 
@@ -33,6 +33,17 @@ namespace FinalProjectGroup11.Pages.Agents
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            //Perform validation for Duplicate License#
+            int AgentCount = _context.Agent.Count(x => x.LicenseNumber == Agent.LicenseNumber);
+            if(AgentCount > 0)
+            {
+                ModelState.AddModelError("Agent.LicenseNumber","Agent with this License Number already exists");
+            }
+            //Recheck Validation Status
+            if(!ModelState.IsValid)
             {
                 return Page();
             }
