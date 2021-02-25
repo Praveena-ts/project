@@ -1,0 +1,114 @@
+﻿@page
+@model FinalProjectGroup11.Pages.Dwellings.SearchModel
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Search Dwellings</h1>
+
+<div class="row">
+    <div class="col">
+        <form action="" method="get" class="form-inline">
+            <input asp-for="Query" class="form-control mr-sm-2 mb-2" placeholder="Search Dwelling Address..." />
+            <input asp-for="MaxPrice" class="form-control mr-sm-2 mb-2" placeholder="Maximum Price" />
+            <button type="submit" class="btn btn-primary mb-2">Search</button>
+        </form>
+    </div>
+</div>
+
+@if (Model.SearchCompleted)
+{
+    if (Model.Dwelling.Any())
+    {
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].DwellingPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].DwellingAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].TotalArea)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].NumberBed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].NumberBath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].DateAdded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].NumberFloor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].Agent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dwelling[0].City)
+            </th>
+           
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Dwelling)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DwellingPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DwellingAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalArea)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberBed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberBath)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateAdded)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberFloor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Agent.AgentDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City.Id)
+                </td>
+                
+                
+            </tr>
+        }
+    </tbody>
+</table>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-info">
+                    Oops.. No Dwelling Match your search criteria!
+                </div>
+            </div>
+        </div>
+    }
+}
+
+       
