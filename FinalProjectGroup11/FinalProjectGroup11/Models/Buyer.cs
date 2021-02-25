@@ -9,12 +9,13 @@ namespace FinalProjectGroup11.Models
     public class Buyer
     {
         public int Id { get; set; }
-        [DisplayName("First Name")]
+        
         public string FirstName { get; set; }
-        [DisplayName("Last Name")]
+        [DisplayName("First Name")]
         public string LastName { get; set; }
-        [DisplayName("Phone Number")]
+        [DisplayName("Last Name")]
         public string PhoneNumber { get; set; }
+        [DisplayName("Phone Number")]
         public decimal Budget { get; set; }
         public List<Dwelling> Dwellings { get; set; }
     }

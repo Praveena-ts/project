@@ -36,6 +36,18 @@ namespace FinalProjectGroup11.Pages.Buyers
                 return Page();
             }
 
+            //Perform validation for Phone Number#
+            int PhoneNumber = _context.Buyer.Count(x => x.PhoneNumber == Buyer.PhoneNumber);
+            if (PhoneNumber > 0)
+            {
+                ModelState.AddModelError("Buyer.PhoneNumber", "This Phone Number already exists");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
             _context.Buyer.Add(Buyer);
             await _context.SaveChangesAsync();
 
