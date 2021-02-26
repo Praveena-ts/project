@@ -38,6 +38,31 @@
     </dl>
 </div>
 <div>
+    <h2> Assigned Dwellings</h2>
+    <table class="table table-info">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Buyer.Dwellings[0].DwellingAddress)</th>
+                <th>@Html.DisplayNameFor(model => model.Buyer.Dwellings[0].TotalArea)</th>
+                <th>@Html.DisplayNameFor(model => model.Buyer.Dwellings[0].NumberBed)</th>
+                <th>@Html.DisplayNameFor(model => model.Buyer.Dwellings[0].NumberBath)</th>
+            </tr>
+        </thead>
+
+        @foreach (var item in Model.Buyer.Dwellings)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.DwellingAddress)</td>
+                <td>@Html.DisplayFor(modelItem => item.TotalArea)</td>
+                <td>@Html.DisplayFor(modelItem => item.NumberBed)</td>
+                <td>@Html.DisplayFor(modelItem => item.NumberBath)</td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+<div>
     <a asp-page="./Edit" asp-route-id="@Model.Buyer.Id">Edit</a> |
     <a asp-page="./Index">Back to List</a>
 </div>

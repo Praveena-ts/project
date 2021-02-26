@@ -28,7 +28,9 @@ namespace FinalProjectGroup11.Pages.Buyers
                 return NotFound();
             }
 
-            Buyer = await _context.Buyer.FirstOrDefaultAsync(m => m.Id == id);
+            Buyer = await _context.Buyer
+                .Include(x => x.Dwellings)
+                .FirstOrDefaultAsync(m => m.Id == id);
 
             if (Buyer == null)
             {
