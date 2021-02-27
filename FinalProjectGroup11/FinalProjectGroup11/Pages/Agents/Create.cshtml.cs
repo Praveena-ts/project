@@ -32,6 +32,7 @@ namespace FinalProjectGroup11.Pages.Agents
         // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
+            ViewData["SalesOfficeId"] = new SelectList(_context.Set<SalesOffice>(), "Id", "Name");
             if (!ModelState.IsValid)
             {
                 return Page();
