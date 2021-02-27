@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,6 +11,8 @@ namespace FinalProjectGroup11.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        [Required(ErrorMessage = "Name is Required")]
+        [StringLength(10)]
         public string Address { get; set; }
         [DisplayName("Manager Name")]
         public string ManagerName { get; set; }
