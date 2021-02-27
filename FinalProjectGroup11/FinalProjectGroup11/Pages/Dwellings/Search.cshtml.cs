@@ -36,14 +36,16 @@ namespace FinalProjectGroup11.Pages.Dwellings
                 if(MaxPrice > 0)
                 {
                     Dwelling = await _context.Dwelling
+                    .Include(d => d.Agent)
+                    .Include(d => d.City)
                     .Where(x => (x.DwellingAddress.Contains(query) && x.DwellingPrice <= MaxPrice))
                     .ToListAsync();
                 }
                 else
                 {
                     Dwelling = await _context.Dwelling
-                        .Include(d => d.Agent)
-                .Include(d => d.City)
+                    .Include(d => d.Agent)
+                    .Include(d => d.City)
                     .Where(x => x.DwellingAddress.Contains(query))
                     .ToListAsync();
                 }
