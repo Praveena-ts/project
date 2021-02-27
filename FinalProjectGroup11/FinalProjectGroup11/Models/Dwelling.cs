@@ -23,9 +23,11 @@ namespace FinalProjectGroup11.Models
         public int TotalArea { get; set; }
 
         [DisplayName("Number of Beds")]
+        [Range(1, 10)]
         public int NumberBed { get; set; }
 
         [DisplayName("Number of Baths")]
+        [Range(1, 10)]
         public int NumberBath { get; set; }
 
         [DisplayName("Date Added")]
@@ -33,6 +35,7 @@ namespace FinalProjectGroup11.Models
         public DateTime DateAdded { get; set; }
 
         [DisplayName("Number of Floors")]
+        [Range(1, 10)]
         public int NumberFloor { get; set; }
 
         [StringLength(200)]
