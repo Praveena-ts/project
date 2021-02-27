@@ -50,5 +50,19 @@ namespace FinalProjectGroup11.Models
         public Buyer Buyer { get; set; }
         [DisplayName("Buyer")]
         public int? BuyerId { get; set; }
+        [DisplayName("Days Listed")]
+        public int DaysListed
+        {
+            get
+            {
+                DateTime today = DateTime.Today;
+                
+                DateTime ListedDate = DateAdded;
+                double DaysSince = (today - DateAdded).TotalDays;
+                int res = (int)Math.Ceiling(DaysSince);
+                return res;
+            }
+        }
+
     }
 }

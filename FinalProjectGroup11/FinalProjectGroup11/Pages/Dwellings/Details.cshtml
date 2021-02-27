@@ -78,6 +78,7 @@
             @Html.DisplayFor(model => model.Dwelling.Buyer.FirstName)
         </dd>
     </dl>
+    <h4><span class="badge-primary">Listed since <strong>@Model.Dwelling.DaysListed</strong> Day(s)</span></h4>
 </div>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Dwelling.Id">Edit</a> |

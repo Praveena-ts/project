@@ -46,17 +46,19 @@
                 <th>@Html.DisplayNameFor(model => model.Buyer.Dwellings[0].TotalArea)</th>
                 <th>@Html.DisplayNameFor(model => model.Buyer.Dwellings[0].NumberBed)</th>
                 <th>@Html.DisplayNameFor(model => model.Buyer.Dwellings[0].NumberBath)</th>
+                <th>@Html.DisplayNameFor(model => model.Buyer.Dwellings[0].DaysListed)</th>
             </tr>
         </thead>
 
         @foreach (var item in Model.Buyer.Dwellings)
         {
-            <tr>
-                <td>@Html.DisplayFor(modelItem => item.DwellingAddress)</td>
-                <td>@Html.DisplayFor(modelItem => item.TotalArea)</td>
-                <td>@Html.DisplayFor(modelItem => item.NumberBed)</td>
-                <td>@Html.DisplayFor(modelItem => item.NumberBath)</td>
-            </tr>
+    <tr>
+        <td>@Html.DisplayFor(modelItem => item.DwellingAddress)</td>
+        <td>@Html.DisplayFor(modelItem => item.TotalArea)</td>
+        <td>@Html.DisplayFor(modelItem => item.NumberBed)</td>
+        <td>@Html.DisplayFor(modelItem => item.NumberBath)</td>
+        <td>@Html.DisplayFor(modelItem => item.DaysListed)</td>
+    </tr>
         }
 
     </table>

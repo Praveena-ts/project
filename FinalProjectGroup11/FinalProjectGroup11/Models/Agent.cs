@@ -42,5 +42,14 @@ namespace FinalProjectGroup11.Models
         public SalesOffice SalesOffice { get; set; }
         [DisplayName("Sales Office")]
         public int SalesOfficeId { get; set; }
+
+        [DisplayName("Full Name")]
+        public string FullName
+        {
+            get
+            {
+                return $"{FirstName} {LastName}";
+            }
+        }
     }
 }
