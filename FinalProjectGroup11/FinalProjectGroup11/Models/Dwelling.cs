@@ -39,10 +39,13 @@ namespace FinalProjectGroup11.Models
         [Required(ErrorMessage = "Description is Required")]
         public string Description { get; set; }
         public Agent Agent { get; set; }
+        [DisplayName("Agent")]
         public int AgentId { get; set; }
         public City City { get; set; }
+        [DisplayName("City")]
         public int CityId { get; set; }
         public Buyer Buyer { get; set; }
+        [DisplayName("Buyer")]
         public int? BuyerId { get; set; }
     }
 }

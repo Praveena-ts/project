@@ -42,6 +42,8 @@ namespace FinalProjectGroup11.Pages.Dwellings
                 else
                 {
                     Dwelling = await _context.Dwelling
+                        .Include(d => d.Agent)
+                .Include(d => d.City)
                     .Where(x => x.DwellingAddress.Contains(query))
                     .ToListAsync();
                 }
