@@ -1427,3 +1427,5 @@ C:\Users\janmejlk\Documents\GitHub\project\FinalProjectGroup11\FinalProjectGroup
 C:\Users\itsme\Desktop\project\FinalProjectGroup11\FinalProjectGroup11\obj\Debug\netcoreapp3.1\Razor\Pages\Admin.cshtml.g.cs
 C:\Users\itsme\Desktop\project\FinalProjectGroup11\FinalProjectGroup11\obj\Debug\netcoreapp3.1\Razor\Pages\Dwellings\Search.cshtml.g.cs
 C:\Users\janmejlk\Documents\GitHub\project\FinalProjectGroup11\FinalProjectGroup11\obj\Debug\netcoreapp3.1\Razor\Pages\Help.cshtml.g.cs
+C:\Users\janmejlk\Documents\GitHub\project\FinalProjectGroup11\FinalProjectGroup11\obj\Debug\netcoreapp3.1\Razor\Pages\Agents\List.cshtml.g.cs
+C:\Users\janmejlk\Documents\GitHub\project\FinalProjectGroup11\FinalProjectGroup11\obj\Debug\netcoreapp3.1\Razor\Pages\SalesOffices\List.cshtml.g.cs
