@@ -54,7 +54,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Dwelling[0].City)
             </th>
-
+            <th></th>
 
         </tr>
     </thead>
@@ -87,12 +87,13 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Agent.FirstName)
+                <a asp-page="/Agents/Details" asp-route-id="@item.AgentId">@Html.DisplayFor(modelItem => item.Agent.FirstName)</a>
+                
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.City.Name)
             </td>
-
+            
 
         </tr>
         }
