@@ -23,9 +23,9 @@ namespace FinalProjectGroup11.Pages.Dwellings
 
         public bool SearchCompleted { get; set; }
         public string Query { get; set; }
-        public decimal MaxPrice { get; set; }
+        public int MaxPrice { get; set; }
 
-        public async Task OnGetAsync(string query, decimal maxPrice)
+        public async Task OnGetAsync(string query, int maxPrice)
         {
             Query = query;
             MaxPrice = maxPrice;
@@ -36,13 +36,13 @@ namespace FinalProjectGroup11.Pages.Dwellings
                 if(MaxPrice > 0)
                 {
                     Dwelling = await _context.Dwelling
-                    .Where(x => (x.DwellingAddress.StartsWith(query) && x.DwellingPrice <= MaxPrice))
+                    .Where(x => (x.DwellingAddress.Contains(query) && x.DwellingPrice <= MaxPrice))
                     .ToListAsync();
                 }
                 else
                 {
                     Dwelling = await _context.Dwelling
-                    .Where(x => (x.DwellingAddress.StartsWith(query)))
+                    .Where(x => x.DwellingAddress.Contains(query))
                     .ToListAsync();
                 }
                 
