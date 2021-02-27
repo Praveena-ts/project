@@ -22,6 +22,7 @@ namespace FinalProjectGroup11.Models
         public string LastName { get; set; }
         
         [DisplayName("Phone Number")]
+        [Phone]
         [Required(ErrorMessage = "Phone Number is Required")]
         [StringLength(10)]
         public string PhoneNumber { get; set; }
