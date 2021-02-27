@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\janmejlk\\Documents\\GitHub\\project\\FinalProjectGroup11\\FinalProjectGroup11\\FinalProjectGroup11.csproj": {}
+    "C:\\Users\\itsme\\Desktop\\Web_dev\\project\\FinalProjectGroup11\\FinalProjectGroup11\\FinalProjectGroup11.csproj": {}
   },
   "projects": {
-    "C:\\Users\\janmejlk\\Documents\\GitHub\\project\\FinalProjectGroup11\\FinalProjectGroup11\\FinalProjectGroup11.csproj": {
+    "C:\\Users\\itsme\\Desktop\\Web_dev\\project\\FinalProjectGroup11\\FinalProjectGroup11\\FinalProjectGroup11.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\janmejlk\\Documents\\GitHub\\project\\FinalProjectGroup11\\FinalProjectGroup11\\FinalProjectGroup11.csproj",
+        "projectUniqueName": "C:\\Users\\itsme\\Desktop\\Web_dev\\project\\FinalProjectGroup11\\FinalProjectGroup11\\FinalProjectGroup11.csproj",
         "projectName": "FinalProjectGroup11",
-        "projectPath": "C:\\Users\\janmejlk\\Documents\\GitHub\\project\\FinalProjectGroup11\\FinalProjectGroup11\\FinalProjectGroup11.csproj",
-        "packagesPath": "C:\\Users\\janmejlk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\janmejlk\\Documents\\GitHub\\project\\FinalProjectGroup11\\FinalProjectGroup11\\obj\\",
+        "projectPath": "C:\\Users\\itsme\\Desktop\\Web_dev\\project\\FinalProjectGroup11\\FinalProjectGroup11\\FinalProjectGroup11.csproj",
+        "packagesPath": "C:\\Users\\itsme\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\itsme\\Desktop\\Web_dev\\project\\FinalProjectGroup11\\FinalProjectGroup11\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\janmejlk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\itsme\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -40,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Gtt.Uc.EntityFramework": {
               "target": "Package",
@@ -86,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

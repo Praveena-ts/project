@@ -28,7 +28,9 @@ namespace FinalProjectGroup11.Pages.SalesOffices
                 return NotFound();
             }
 
-            SalesOffice = await _context.SalesOffice.FirstOrDefaultAsync(m => m.Id == id);
+            SalesOffice = await _context.SalesOffice
+                .Include(x => x.Agents)
+                .FirstOrDefaultAsync(m => m.Id == id);
 
             if (SalesOffice == null)
             {

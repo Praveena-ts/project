@@ -32,6 +32,31 @@
     </dl>
 </div>
 <div>
-   
-    
+    <h2> Agents</h2>
+    <table class="table table-info">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.SalesOffice.Agents[0].FirstName)</th>
+                <th>@Html.DisplayNameFor(model => model.SalesOffice.Agents[0].LastName)</th>
+                <th>@Html.DisplayNameFor(model => model.SalesOffice.Agents[0].EmailId)</th>
+                <th>@Html.DisplayNameFor(model => model.SalesOffice.Agents[0].Rating)</th>
+            </tr>
+        </thead>
+
+        @foreach (var item in Model.SalesOffice.Agents)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+                <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+                <td>@Html.DisplayFor(modelItem => item.EmailId)</td>
+                <td>@Html.DisplayFor(modelItem => item.Rating)</td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+<div>
+
+
 </div>
