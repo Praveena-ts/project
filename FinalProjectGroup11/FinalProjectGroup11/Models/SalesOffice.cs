@@ -18,6 +18,8 @@ namespace FinalProjectGroup11.Models
         public string Address { get; set; }
         [DisplayName("Manager Name")]
         public string ManagerName { get; set; }
+
+        public decimal TotalAgents { get; set; }
         public List<Agent> Agents { get; set; }
     }
 }

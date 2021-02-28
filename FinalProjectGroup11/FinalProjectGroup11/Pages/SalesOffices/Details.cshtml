@@ -29,6 +29,12 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SalesOffice.ManagerName)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SalesOffice.TotalAgents)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SalesOffice.Agents.Count)
+        </dd>
     </dl>
 </div>
 <div>
